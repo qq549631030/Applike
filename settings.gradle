@@ -1,5 +1,6 @@
-include ':compiler'
 include ':annotation'
+include ':compiler'
 include ':api'
+include ':plugin'
 include ':app'
 rootProject.name = "Applike"
