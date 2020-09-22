@@ -1,9 +1,16 @@
 apply plugin: 'java-library'
 
+ext {
+    projectName = 'applike-compiler'
+    projectArtifactId = 'compiler'
+    projectDesc = 'compiler for AppLike'
+    artifactType = 'jar'
+}
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 //    implementation project(path: ':annotation')
-    implementation 'cn.hx.applike:annotation:1.0.0'
+    implementation 'cn.hx.applike:annotation:1.0.1'
     implementation 'com.google.auto.service:auto-service:1.0-rc4'
     annotationProcessor "com.google.auto.service:auto-service:1.0-rc4"
 }
@@ -12,61 +19,3 @@ sourceCompatibility = "1.7"
 targetCompatibility = "1.7"
 
 apply from: rootProject.projectDir.absolutePath + "/bintray-release.gradle"
-
-// load properties
-Properties properties = new Properties()
-File localPropertiesFile = project.file("$rootProject.projectDir.absolutePath/local.properties");
-if (localPropertiesFile.exists()) {
-    properties.load(localPropertiesFile.newDataInputStream())
-}
-File projectPropertiesFile = project.file("project.properties");
-if (projectPropertiesFile.exists()) {
-    properties.load(projectPropertiesFile.newDataInputStream())
-}
-
-def projectName = properties.getProperty("project.name")
-def projectGroupId = properties.getProperty("project.groupId")
-def projectArtifactId = properties.getProperty("project.artifactId")
-def projectArtifactVersion = properties.getProperty("project.artifactVersion")
-def projectSiteUrl = properties.getProperty("project.siteUrl")
-def projectGitUrl = properties.getProperty("project.gitUrl")
-def projectDesc = properties.getProperty("project.desc")
-
-def bintray_Org = properties.getProperty("bintray.org")
-def bintray_User = properties.getProperty("bintray.user")
-def bintrayApikey = properties.getProperty("bintray.apikey")
-def mavenUserName = properties.getProperty("mavenUserName")
-def mavenUserPassword = properties.getProperty("mavenUserPassword")
-
-publish {
-    groupId = projectGroupId
-    artifactId = projectArtifactId
-    uploadName = projectName
-    website = projectSiteUrl
-    repository = projectGitUrl
-    desc = projectDesc
-    publishVersion = projectArtifactVersion
-    userOrg = bintray_Org
-    bintrayUser = bintray_User
-    bintrayKey = bintrayApikey
-    dryRun = true
-}
-
-uploadArchives {
-    repositories {
-        mavenDeployer {
-//            repository(url: 'your repositories') {
-//                authentication(userName: mavenUserName, password: mavenUserPassword)
-//            }
-            repository(url: uri("../repo"))
-            pom.version = projectArtifactVersion
-            pom.artifactId = projectArtifactId
-            pom.groupId = projectGroupId
-            pom.project {
-                name = project.name
-                packaging = 'jar'
-                description = projectDesc
-            }
-        }
-    }
-}
