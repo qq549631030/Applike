@@ -18,12 +18,16 @@ buildscript {
 ```groovy
 apply plugin: 'com.android.application'
 //apply plugin: 'com.android.library'
-apply plugin: 'cn.hx.applike'
 
 dependencies {
 	implementation 'cn.hx.applike:api:1.0.0'
 	annotationProcessor 'cn.hx.applike:compiler:1.0.0'
 }
+```
+app模块中：
+```groovy
+apply plugin: 'com.android.application'
+apply plugin: 'cn.hx.applike'
 ```
 
 ### 使用
