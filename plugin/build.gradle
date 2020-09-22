@@ -54,7 +54,7 @@ publish {
     userOrg = bintray_Org
     bintrayUser = bintray_User
     bintrayKey = bintrayApikey
-    dryRun = false
+    dryRun = true
 }
 
 uploadArchives {
