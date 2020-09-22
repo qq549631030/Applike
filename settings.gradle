@@ -1,0 +1,5 @@
+include ':compiler'
+include ':annotation'
+include ':api'
+include ':app'
+rootProject.name = "Applike"
