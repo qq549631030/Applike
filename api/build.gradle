@@ -25,7 +25,7 @@ android {
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
 //    implementation project(path: ':annotation')
-    implementation 'cn.hx.applike:annotation:1.0.0'
+    api 'cn.hx.applike:annotation:1.0.0'
 }
 
 apply from: rootProject.projectDir.absolutePath + "/bintray-release.gradle"
