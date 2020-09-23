@@ -2,7 +2,19 @@
 
 [ ![Download](https://api.bintray.com/packages/qq549631030/maven/applike-plugin/images/download.svg) ](https://bintray.com/qq549631030/maven/applike-plugin/_latestVersion)
 
-此插件用于android组件化开发时，各模块启动初始化
+此插件用于android组件化开发时，各模块启动初始化。
+
+原理参考：  
+
+[Android组件化开发实践（八）：组件生命周期如何实现自动注册管理](https://www.jianshu.com/p/59368ce8b670)
+
+[Android组件化开发实践（九）：自定义Gradle插件](https://www.jianshu.com/p/3ec8e9574aaf)
+
+代码参考：
+
+[Android-AppLifecycleMgr](https://github.com/houjinyun/Android-AppLifecycleMgr)
+
+作者未将之上传到jcenter，本人将之仿写后上传到jcenter方便大家使用
 
 ### 下载
 
@@ -10,7 +22,7 @@
 ```groovy
 buildscript {
     dependencies {
-        classpath "cn.hx.applike:plugin:1.0.0"
+        classpath "cn.hx.applike:plugin:1.0.1"
     }
 }
 ```
@@ -20,8 +32,8 @@ apply plugin: 'com.android.application'
 //apply plugin: 'com.android.library'
 
 dependencies {
-	implementation 'cn.hx.applike:api:1.0.0'
-	annotationProcessor 'cn.hx.applike:compiler:1.0.0'
+	implementation 'cn.hx.applike:api:1.0.1'
+	annotationProcessor 'cn.hx.applike:compiler:1.0.1'
 }
 ```
 app模块中：
