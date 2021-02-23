@@ -1,11 +1,5 @@
 apply plugin: 'com.android.library'
-
-ext {
-    projectName = 'applike-api'
-    projectArtifactId = 'api'
-    projectDesc = 'api for AppLike'
-    artifactType = 'aar'
-}
+apply plugin: "com.vanniktech.maven.publish"
 
 android {
     compileSdkVersion 30
@@ -32,7 +26,5 @@ android {
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
 //    implementation project(path: ':annotation')
-    api 'cn.hx.applike:annotation:1.0.1'
+    api 'com.github.qq549631030:applike-annotation:1.0.7'
 }
-
-apply from: rootProject.projectDir.absolutePath + "/bintray-release.gradle"

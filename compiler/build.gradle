@@ -1,21 +1,10 @@
 apply plugin: 'java-library'
-
-ext {
-    projectName = 'applike-compiler'
-    projectArtifactId = 'compiler'
-    projectDesc = 'compiler for AppLike'
-    artifactType = 'jar'
-}
+apply plugin: "com.vanniktech.maven.publish"
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 //    implementation project(path: ':annotation')
-    implementation 'cn.hx.applike:annotation:1.0.1'
+    implementation 'com.github.qq549631030:applike-annotation:1.0.7'
     implementation 'com.google.auto.service:auto-service:1.0-rc4'
     annotationProcessor "com.google.auto.service:auto-service:1.0-rc4"
 }
-
-sourceCompatibility = "1.7"
-targetCompatibility = "1.7"
-
-apply from: rootProject.projectDir.absolutePath + "/bintray-release.gradle"

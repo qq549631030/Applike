@@ -1,12 +1,6 @@
 apply plugin: 'java-library'
 apply plugin: 'groovy'
-
-ext {
-    projectName = 'applike-plugin'
-    projectArtifactId = 'plugin'
-    projectDesc = 'plugin for AppLike'
-    artifactType = 'jar'
-}
+apply plugin: "com.vanniktech.maven.publish"
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -14,13 +8,4 @@ dependencies {
     implementation localGroovy()
     implementation 'com.android.tools.build:transform-api:1.5.0'
     implementation 'com.android.tools.build:gradle:3.0.0'
-}
-
-sourceCompatibility = "1.7"
-targetCompatibility = "1.7"
-
-apply from: rootProject.projectDir.absolutePath + "/bintray-release.gradle"
-
-tasks.sourcesJar {
-    from sourceSets.main.groovy.srcDirs
 }

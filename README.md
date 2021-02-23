@@ -1,7 +1,5 @@
 #  Android启动初始化插件
 
-[ ![Download](https://api.bintray.com/packages/qq549631030/maven/applike-plugin/images/download.svg) ](https://bintray.com/qq549631030/maven/applike-plugin/_latestVersion)
-
 此插件用于android组件化开发时，各模块启动初始化。
 
 原理参考：  
@@ -14,15 +12,16 @@
 
 [Android-AppLifecycleMgr](https://github.com/houjinyun/Android-AppLifecycleMgr)
 
-作者未将之上传到jcenter，本人将之仿写后上传到jcenter方便大家使用
+作者未将之上传到jcenter，本人将之仿写后上传到mavenCentral方便大家使用
 
 ### 下载
 
 根目录的build.gradle中：
 ```groovy
 buildscript {
+    mavenCentral()
     dependencies {
-        classpath "cn.hx.applike:plugin:1.0.1"
+        classpath "com.github.qq549631030:applike-plugin:1.0.7"
     }
 }
 ```
@@ -32,8 +31,8 @@ apply plugin: 'com.android.application'
 //apply plugin: 'com.android.library'
 
 dependencies {
-	implementation 'cn.hx.applike:api:1.0.1'
-	annotationProcessor 'cn.hx.applike:compiler:1.0.1'
+	implementation 'com.github.qq549631030:applike-api:1.0.7'
+	annotationProcessor 'com.github.qq549631030:applike-compiler:1.0.7'
 }
 ```
 app模块中：
