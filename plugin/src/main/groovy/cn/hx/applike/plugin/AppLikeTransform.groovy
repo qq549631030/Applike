@@ -16,7 +16,7 @@ class AppLikeTransform extends Transform {
 
     @Override
     String getName() {
-        return "AppLikeTransform"
+        return "AppLike"
     }
 
     @Override
@@ -31,14 +31,14 @@ class AppLikeTransform extends Transform {
 
     @Override
     boolean isIncremental() {
-        return false
+        return true
     }
 
     static void printCopyRight() {
         println()
         println("\033[0;32;40m******************************************************************************\033[0m")
         println("\033[0;32;40m******                                                                  ******\033[0m")
-        println("\033[0;32;40m******                欢迎使用 AppLike 编译插件                           ******\033[0m")
+        println("\033[0;32;40m******                欢迎使用 AppLike 编译插件                            ******\033[0m")
         println("\033[0;32;40m******                                                                  ******\033[0m")
         println("\033[0;32;40m******************************************************************************\033[0m")
     }

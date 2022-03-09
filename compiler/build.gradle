@@ -4,7 +4,12 @@ apply plugin: "com.vanniktech.maven.publish"
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 //    implementation project(path: ':annotation')
-    implementation 'com.github.qq549631030:applike-annotation:1.0.7'
-    implementation 'com.google.auto.service:auto-service:1.0-rc4'
-    annotationProcessor "com.google.auto.service:auto-service:1.0-rc4"
+    implementation 'com.github.qq549631030:applike-annotation:1.0.8'
+    implementation 'com.google.auto.service:auto-service:1.0'
+    annotationProcessor "com.google.auto.service:auto-service:1.0"
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
 }

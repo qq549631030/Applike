@@ -44,7 +44,7 @@ class ScanUtil {
             JarEntry jarEntry = enumeration.nextElement()
             String entryName = jarEntry.getName()
             if (entryName == REGISTER_CLASS_FILE_NAME) {
-                //标记这个jar包包含 AppLifeCycleManager.class
+                //标记这个jar包包含 AppLikeManager.class
                 //扫描结束后，我们会生成注册代码到这个文件里
                 FILE_CONTAINS_INIT_CLASS = destFile
             } else {
