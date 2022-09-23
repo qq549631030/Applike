@@ -1,6 +1,8 @@
 apply plugin: 'java-library'
 apply plugin: 'groovy'
-apply plugin: "com.vanniktech.maven.publish"
+if (FOR_PUBLISH.toBoolean()) {
+    apply plugin: "com.vanniktech.maven.publish"
+}
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])

@@ -1,5 +1,7 @@
 apply plugin: 'java-library'
-apply plugin: "com.vanniktech.maven.publish"
+if (FOR_PUBLISH.toBoolean()) {
+    apply plugin: "com.vanniktech.maven.publish"
+}
 
 
 dependencies {

@@ -1,10 +1,15 @@
 apply plugin: 'java-library'
-apply plugin: "com.vanniktech.maven.publish"
+if (FOR_PUBLISH.toBoolean()) {
+    apply plugin: "com.vanniktech.maven.publish"
+}
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-//    implementation project(path: ':annotation')
-    implementation 'com.github.qq549631030:applike-annotation:1.0.8'
+    if (FOR_PUBLISH.toBoolean()) {
+        implementation "com.github.qq549631030:applike-annotation:${VERSION_NAME}"
+    } else {
+        implementation project(path: ':annotation')
+    }
     implementation 'com.google.auto.service:auto-service:1.0'
     annotationProcessor "com.google.auto.service:auto-service:1.0"
 }
