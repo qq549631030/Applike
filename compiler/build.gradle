@@ -6,7 +6,7 @@ if (FOR_PUBLISH.toBoolean()) {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     if (FOR_PUBLISH.toBoolean()) {
-        implementation "com.github.qq549631030:applike-annotation:${VERSION_NAME}"
+        api "com.github.qq549631030:applike-annotation:${VERSION_NAME}"
     } else {
         implementation project(path: ':annotation')
     }

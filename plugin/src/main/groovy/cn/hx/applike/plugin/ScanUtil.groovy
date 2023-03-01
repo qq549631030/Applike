@@ -48,11 +48,11 @@ class ScanUtil {
                 //扫描结束后，我们会生成注册代码到这个文件里
                 FILE_CONTAINS_INIT_CLASS = destFile
             } else {
-                if (entryName.startsWith(PROXY_CLASS_PACKAGE_NAME)) {
+                if (entryName.startsWith(PROXY_CLASS_PACKAGE_NAME) && entryName.endsWith(PROXY_CLASS_SUFFIX)) {
                     if (list == null) {
                         list = new ArrayList<>()
                     }
-                    list.addAll(entryName.substring(entryName.lastIndexOf("/") + 1))
+                    list.add(entryName.substring(entryName.lastIndexOf("/") + 1))
                 }
             }
         }

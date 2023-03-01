@@ -21,7 +21,7 @@
 buildscript {
     mavenCentral()
     dependencies {
-        classpath "com.github.qq549631030:applike-plugin:1.0.8"
+        classpath "com.github.qq549631030:applike-plugin:1.0.9"
     }
 }
 ```
@@ -31,8 +31,8 @@ apply plugin: 'com.android.application'
 //apply plugin: 'com.android.library'
 
 dependencies {
-	implementation 'com.github.qq549631030:applike-api:1.0.8'
-	annotationProcessor 'com.github.qq549631030:applike-compiler:1.0.8'
+	implementation 'com.github.qq549631030:applike-api:1.0.9'
+	annotationProcessor 'com.github.qq549631030:applike-compiler:1.0.9'
 }
 ```
 app模块中：
